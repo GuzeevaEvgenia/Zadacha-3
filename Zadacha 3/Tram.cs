@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zadacha_3 
+namespace Zadacha_3
 {
-    class Tram : PublicTransport, IVehicle
+    class Tram : PublicTransport
     {
         public string Comment { get; set; }
 
@@ -44,5 +44,22 @@ namespace Zadacha_3
         {
             return Comment;
         }
+        public override string Repair()
+        {
+            return "Вы починили транспорт с номером " + Number;
+        }
+        public override string Fuel()
+        {
+            return "Вы заправили транспорт с номером " + Number;
+        }
+        public override string ShowInfo()
+        {
+            return "Транспорт с номером " + Number + " " + Year + " года выпуска.";
+        }
+        public override string ShowCapacity()
+        {
+            return "Транспорт с номером " + Number + " имеет вместимость " + Capacity + " человек.";
+        }
     }
 }
+

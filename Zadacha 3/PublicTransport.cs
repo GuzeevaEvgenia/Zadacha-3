@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zadacha_3 
 {
-    class PublicTransport : IVehicle
+    public abstract class PublicTransport : IVehicle
     {
         private string number;
         public string Number
@@ -34,26 +34,14 @@ namespace Zadacha_3
             }
         }
 
-        public int Capacity { get; set; }
+        protected int Capacity { get; set; }
 
-        public string Repair()
-        {
-            return "Вы починили транспорт с номером " + Number;
-        }
+        public abstract string Repair();
 
-        public string Fuel()
-        {
-            return "Вы заправили транспорт с номером " + Number;
-        }
+        public abstract string Fuel();
 
-        public string ShowInfo()
-        {
-            return "Транспорт с номером " + Number + " " + Year + " года выпуска.";
-        }
+        public abstract string ShowInfo();
 
-        public string ShowCapacity()
-        {
-            return "Транспорт с номером " + Number + " имеет вместимость " + Capacity + " человек.";
-        }
+        public abstract string ShowCapacity();
     }
 }
